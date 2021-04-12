@@ -31,11 +31,7 @@ npx concurrently "tsc -w" "nodemon -w dist -q dist/index.js"
 To check the sequence
 npx concurrently -n COMPILE,NODEMON yello,blue "tsc -w" "nodemon -w dist -q dist/index.js"
 
-
-//first program 
-mkdir src
-cd src/
-touch index.ts
+Enjoy TS
 
 
 
