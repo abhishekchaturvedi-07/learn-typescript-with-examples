@@ -19,3 +19,24 @@
   const AB = A + B
   How would you import A and B into your module?
 - We cant import which we didnt export using the export keyword. In this question, that is not a module, because it doesn't export anything.
+
+- Now, consider we have two modules
+  ./module1.ts
+  let A = 'A1'
+  export default getA = () => A
+  AND
+  ./module2.ts
+  let A = 'A2'
+  export default addBToA = (B: string) => A + B
+  Then, we import both of them in our ./index.ts file
+  import getA from './module1'
+  import addBToA from './module2'
+  Both modules define the variable A. Would we get an error, because in our index file module2 declares A after module1?
+- Nope, because every module get executed in its own scope, it will be there only until we export it.
+
+- How would you import everything this module exports?
+  export const A = 'A'
+  export const B = 'B'
+  const C = 'C'
+  export default C
+- import * as all from './module'
